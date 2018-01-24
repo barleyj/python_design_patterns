@@ -18,18 +18,3 @@ class SingletonMeta(type):
 
         cls.instance = None
         cls.__new__ = staticmethod(get_instance)
-
-
-class Test():
-    __metaclass__=SingletonMeta
-
-    def __init__(self, value):
-        self.value = value
-
-
-t1 = Test('t1')
-print(t1.value)
-
-t2 = Test('t2')
-print(t2.value)
-print(t1.value)
